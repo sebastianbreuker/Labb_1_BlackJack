@@ -1,0 +1,279 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Georgia", "Times New Roman", serif;
+  color: #f5e9c8;
+  background: radial-gradient(
+    ellipse at center,
+    #1a6b3a 0%,
+    #0d4424 60%,
+    #07301a 100%
+  );
+  background-attachment: fixed;
+  padding: 20px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background: linear-gradient(180deg, #1a1a1a 0%, #000 100%);
+  border: 2px solid #d4af37;
+  border-radius: 10px;
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+nav h3 {
+  color: #d4af37;
+  font-variant: small-caps;
+  letter-spacing: 2px;
+}
+
+.log-in {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.log-in input {
+  padding: 8px 12px;
+  border: 1px solid #d4af37;
+  border-radius: 6px;
+  background: #111;
+  color: #f5e9c8;
+  font-family: inherit;
+  outline: none;
+  transition:
+    box-shadow 0.2s,
+    border-color 0.2s;
+}
+
+.log-in input:focus {
+  border-color: #ffd700;
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+}
+
+.log-in input::placeholder {
+  color: #8a7a4a;
+}
+
+header {
+  text-align: center;
+  margin: 30px 0 20px;
+}
+
+header h1 {
+  font-size: 64px;
+  font-weight: bold;
+  letter-spacing: 6px;
+  color: #ffd700;
+  text-shadow:
+    2px 2px 0 #8a6d1c,
+    4px 4px 12px rgba(0, 0, 0, 0.8),
+    0 0 30px rgba(255, 215, 0, 0.4);
+  font-variant: small-caps;
+}
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 30px;
+  background: radial-gradient(
+    ellipse at center,
+    #2d8f54 0%,
+    #166635 70%,
+    #0a3d1f 100%
+  );
+  border: 6px solid #5b3a1e;
+  border-radius: 200px / 80px;
+  box-shadow:
+    inset 0 0 60px rgba(0, 0, 0, 0.5),
+    inset 0 0 0 4px #d4af37,
+    0 10px 40px rgba(0, 0, 0, 0.7);
+  position: relative;
+}
+
+main div {
+  border: none;
+}
+
+main h2 {
+  text-align: center;
+  color: #f5e9c8;
+  font-variant: small-caps;
+  letter-spacing: 3px;
+  margin-bottom: 12px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+main h2 span {
+  color: #ffd700;
+  font-weight: bold;
+  margin-left: 6px;
+}
+
+.dealer-section,
+.player-hand {
+  margin: 20px 0;
+  padding: 20px;
+}
+
+.player-hand {
+  border-top: 2px dashed rgba(212, 175, 55, 0.4);
+  margin-top: 30px;
+  padding-top: 30px;
+}
+
+.dealer-cards,
+.player-cards {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  gap: 12px;
+  min-height: 160px;
+  flex-wrap: wrap;
+}
+
+.dealer-cards li,
+.player-cards li {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow:
+    0 6px 14px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+  animation: dealCard 0.4s ease-out;
+}
+
+.dealer-cards li:hover,
+.player-cards li:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 12px 20px rgba(0, 0, 0, 0.7),
+    0 0 14px rgba(255, 215, 0, 0.4);
+}
+
+.dealer-cards li img,
+.player-cards li img {
+  display: block;
+  height: 150px;
+  width: auto;
+}
+
+@keyframes dealCard {
+  from {
+    transform: translateY(-40px) rotate(-8deg);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) rotate(0);
+    opacity: 1;
+  }
+}
+
+footer {
+  max-width: 1100px;
+  margin: 25px auto 0;
+  padding: 20px 30px;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(180deg, #1a1a1a 0%, #000 100%);
+  border: 2px solid #d4af37;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+.player-choice {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.result {
+  margin-left: 14px;
+  color: #ffd700;
+  font-variant: small-caps;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+  min-height: 1.2em;
+}
+
+.currency {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
+}
+
+.currency h4 {
+  color: #ffd700;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+button {
+  padding: 10px 20px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #f5e9c8;
+  background: linear-gradient(180deg, #8b1a1a 0%, #4a0d0d 100%);
+  border: 2px solid #d4af37;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow:
+    0 3px 8px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transition:
+    transform 0.1s,
+    box-shadow 0.2s,
+    background 0.2s;
+}
+
+button:hover {
+  background: linear-gradient(180deg, #b32424 0%, #6a1414 100%);
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.7),
+    0 0 12px rgba(255, 215, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+button:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+footer button {
+  width: auto;
+  min-width: 90px;
+}
+
+.login-button {
+  background: linear-gradient(180deg, #d4af37 0%, #8a6d1c 100%);
+  color: #1a1a1a;
+  border-color: #ffd700;
+}
+
+.login-button:hover {
+  background: linear-gradient(180deg, #ffd700 0%, #b8901f 100%);
+}
+
+.newgame {
+  background: linear-gradient(180deg, #1f6b3a 0%, #0d4422 100%);
+}
+
+.newgame:hover {
+  background: linear-gradient(180deg, #2d8f54 0%, #166635 100%);
+}

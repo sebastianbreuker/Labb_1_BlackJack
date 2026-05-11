@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BlackJack Spel</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="js/main.js" defer></script>
+  </head>
+  <body>
+    <section id="login-screen" class="login-screen">
+      <div class="login-box">
+        <h2>Logga in</h2>
+        <input
+          type="text"
+          id="username"
+          placeholder="Användarnamn"
+          autocomplete="username"
+        />
+        <input
+          type="password"
+          id="password"
+          placeholder="Lösenord"
+          autocomplete="current-password"
+        />
+        <button id="login-button">Logga in</button>
+        <p id="login-error" class="login-error"></p>
+      </div>
+    </section>
+
+    <div id="game-screen" class="game-screen hidden">
+      <header class="topbar">
+        <h1>BlackJack</h1>
+        <div class="topbar-right">
+          <span class="balance-label">Saldo:</span>
+          <span id="balance" class="balance-value">0</span>
+          <span class="balance-label">kr</span>
+          <button id="deposit-button" class="small-button">
+            Sätt in pengar
+          </button>
+        </div>
+      </header>
+
+      <main class="table">
+        <section class="dealer-area">
+          <h2>Dealer (<span id="dealer-score">0</span>)</h2>
+          <ul id="dealer-cards" class="cards"></ul>
+        </section>
+
+        <p id="result" class="result"></p>
+
+        <section class="player-area">
+          <h2>Spelare (<span id="player-score">—</span>)</h2>
+          <div id="player-hands" class="hands"></div>
+        </section>
+
+        <section id="bet-bar" class="bar">
+          <label>
+            Insats:
+            <input type="number" id="bet-input" min="10" step="10" value="50" />
+            kr
+          </label>
+          <button id="deal-button">Spela</button>
+        </section>
+
+        <section id="action-bar" class="bar hidden">
+          <button id="hit-button">Slå</button>
+          <button id="stand-button">Stanna</button>
+          <button id="double-button">Dubbla</button>
+          <button id="split-button">Dela</button>
+        </section>
+
+        <section id="round-bar" class="bar hidden">
+          <button id="new-round-button">Nytt spel</button>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
